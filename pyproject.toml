@@ -1,0 +1,117 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genesis-pantheon"
+version = "0.1.0"
+description = "A production-grade multi-agent AI framework for collaborative software development"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["ai", "multi-agent", "llm", "software-engineering", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pydantic>=2.5.3,<3.0.0",
+    "pydantic-settings>=2.0.0",
+    "openai>=1.0.0,<2.0.0",
+    "anthropic>=0.20.0",
+    "google-generativeai>=0.4.0",
+    "httpx>=0.24.0",
+    "aiohttp>=3.8.0",
+    "aiofiles>=23.0.0",
+    "tenacity>=8.2.0",
+    "tiktoken>=0.5.0",
+    "loguru>=0.6.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+    "gitpython>=3.1.0",
+    "beautifulsoup4>=4.12.0",
+    "pandas>=2.0.0",
+    "numpy>=1.26.0",
+    "tqdm>=4.65.0",
+    "networkx>=3.0.0",
+]
+
+[project.optional-dependencies]
+rag = [
+    "llama-index-core>=0.10.0",
+    "faiss-cpu>=1.7.0",
+    "chromadb>=0.4.0",
+]
+search = [
+    "google-api-python-client>=2.90.0",
+    "duckduckgo-search>=4.0.0",
+]
+browser = [
+    "playwright>=1.26",
+    "selenium>=4.0",
+]
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.11.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+dev = [
+    "genesis-pantheon[test]",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.scripts]
+genesispan = "genesis_pantheon.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/daniell-olaitan/GenesisPantheon"
+Documentation = "https://github.com/daniell-olaitan/GenesisPantheon/docs"
+Repository = "https://github.com/daniell-olaitan/GenesisPantheon"
+Issues = "https://github.com/daniell-olaitan/GenesisPantheon/issues"
+
+[tool.setuptools.packages.find]
+include = ["genesis_pantheon*"]
+
+[tool.ruff]
+line-length = 79
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["genesis_pantheon"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = false
+ignore_missing_imports = true
+warn_return_any = false
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=genesis_pantheon --cov-report=term-missing --cov-report=xml"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["genesis_pantheon"]
+omit = ["*/tests/*", "*/examples/*"]
